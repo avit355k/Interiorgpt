@@ -6,7 +6,7 @@ import { Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { UserButton, useUser } from "@clerk/nextjs";
 import { Button } from "./ui/button";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function Navbar() {
     const { isSignedIn } = useUser();
@@ -14,7 +14,7 @@ export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
-        <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-transparent backdrop-blur-xl ">
+        <nav className="sticky top-0 z-50 w-full border-b border-border bg-transparent backdrop-blur-xl ">
             <div className="mx-auto flex h-16 items-center justify-between px-4 md:px-6">
 
                 {/* Logo */}
@@ -22,7 +22,9 @@ export default function Navbar() {
                     <div className="flex gap-2 items-center">
                         <Image src="/logo.svg" alt="logo" width={40} height={40} />
 
-                        <h2 className="font-bold text-lg">InteriorGPT</h2>
+                        <h2 className="bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent font-bold text-lg">
+                            InteriorGPT
+                            </h2>
                     </div>
                 </Link>
 
